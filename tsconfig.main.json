@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "./dist/main",
+    "rootDir": "./src/main",
+    "baseUrl": ".",
+    "paths": {
+      "@services/*": ["src/main/services/*"],
+      "@data/*": ["src/main/data/*"],
+      "@ipc/*": ["src/main/ipc/*"],
+      "@utils/*": ["src/main/utils/*"],
+      "@skills/*": ["src/main/skills/*"],
+      "@vector/*": ["src/main/vector/*"],
+      "@channels/*": ["src/main/channels/*"]
+    }
+  },
+  "include": ["src/main/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

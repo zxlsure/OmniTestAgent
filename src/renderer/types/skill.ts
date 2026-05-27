@@ -1,0 +1,1 @@
+export interface SkillRecord { id: string; name: string; display_name: string; description: string | null; is_builtin: number; is_enabled: number; config: string | null; created_at: string; updated_at: string }
