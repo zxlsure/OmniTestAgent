@@ -146,3 +146,23 @@ export interface PipelineProgressEvent {
   output?: unknown
   error?: string
 }
+
+export enum StepPanelType {
+  IMPORT = 'import',
+  ANALYSIS = 'analysis',
+  REVIEW = 'review'
+}
+
+export function getStepPanelType(stepType: PipelineStepType): StepPanelType {
+  const meta = STEP_META_MAP[stepType]
+  if (meta.isImport) return StepPanelType.IMPORT
+  if (meta.isReview) return StepPanelType.REVIEW
+  return StepPanelType.ANALYSIS
+}
+
+export interface StepContentViewState {
+  selectedFileName: string | null
+  previewMode: 'preview' | 'edit'
+  editContent: string
+  contentLoading: boolean
+}

@@ -10,13 +10,13 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@features/*": ["src/features/*"],
-      "@components/*": ["src/components/*"],
-      "@composables/*": ["src/composables/*"],
-      "@store/*": ["src/store/*"],
-      "@utils/*": ["src/utils/*"],
-      "@types/*": ["src/types/*"]
+      "@/*": ["src/renderer/*"],
+      "@features/*": ["src/renderer/features/*"],
+      "@components/*": ["src/renderer/components/*"],
+      "@composables/*": ["src/renderer/composables/*"],
+      "@store/*": ["src/renderer/store/*"],
+      "@utils/*": ["src/renderer/utils/*"],
+      "@types/*": ["src/renderer/types/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
