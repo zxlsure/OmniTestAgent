@@ -164,7 +164,7 @@ describe('TestFlowPipelineService', () => {
 
     it('多依赖步骤需全部完成', () => {
       const state = makeState()
-      setStepStatus(state, PipelineStepType.SPEC_IMPORT, StepStatus.COMPLETED)
+      setStepStatus(state, PipelineStepType.REQUIREMENT_ANALYSIS, StepStatus.COMPLETED)
       expect(service.checkDependencies(PipelineStepType.TEST_DESIGN, state)).toBe(true)
     })
   })

@@ -27,7 +27,7 @@ export const STEP_DEPENDENCIES: Record<PipelineStepType, PipelineStepType[]> = {
   [PipelineStepType.SPEC_IMPORT]: [],
   [PipelineStepType.REQUIREMENT_ANALYSIS]: [PipelineStepType.REQUIREMENT_IMPORT],
   [PipelineStepType.REQUIREMENT_REVIEW]: [PipelineStepType.REQUIREMENT_ANALYSIS],
-  [PipelineStepType.TEST_DESIGN]: [PipelineStepType.SPEC_IMPORT],
+  [PipelineStepType.TEST_DESIGN]: [PipelineStepType.REQUIREMENT_ANALYSIS],
   [PipelineStepType.DESIGN_REVIEW]: [PipelineStepType.TEST_DESIGN],
   [PipelineStepType.CASE_GENERATION]: [PipelineStepType.TEST_DESIGN],
   [PipelineStepType.CASE_REVIEW]: [PipelineStepType.CASE_GENERATION],

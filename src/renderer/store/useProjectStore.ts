@@ -14,8 +14,8 @@ export const useProjectStore = defineStore('project', () => {
     }
   }
 
-  async function createProject(name: string, description?: string, directory?: string): Promise<Project> {
-    const project = await window.electronAPI.project.create({ name, description, directory })
+  async function createProject(name: string, description?: string): Promise<Project> {
+    const project = await window.electronAPI.project.create({ name, description })
     projects.value.unshift(project)
     return project
   }

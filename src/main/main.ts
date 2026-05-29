@@ -4,6 +4,7 @@ import { registerAllIpcHandlers } from './ipc'
 import { initDatabase, closeDatabase } from './data/database'
 import { initSecureStore } from './data/secureStore'
 import { logger } from './utils/logger'
+import { initBuiltinSkills } from './skills/initBuiltinSkills'
 
 let mainWindow: BrowserWindow | null = null
 let tray: Tray | null = null
@@ -74,6 +75,9 @@ app.whenReady().then(async () => {
     await logger.init()
     logger.info('Initializing database...')
     await initDatabase()
+
+    logger.info('Initializing builtin skills...')
+    initBuiltinSkills()
 
     logger.info('Initializing secure store...')
     await initSecureStore()

@@ -3,7 +3,7 @@ const { contextBridge, ipcRenderer } = require('electron')
 const electronAPI = {
   project: {
     list: () => ipcRenderer.invoke('project:list'),
-    create: (data: { name: string; description?: string; directory?: string }) => ipcRenderer.invoke('project:create', data),
+    create: (data: { name: string; description?: string }) => ipcRenderer.invoke('project:create', data),
     update: (data: { id: string; name?: string; description?: string; directory?: string }) => ipcRenderer.invoke('project:update', data),
     delete: (id: string) => ipcRenderer.invoke('project:delete', id),
     switch: (id: string) => ipcRenderer.invoke('project:switch', id),

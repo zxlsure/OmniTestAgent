@@ -45,7 +45,7 @@ declare global {
     electronAPI: {
       project: {
         list: () => Promise<Project[]>
-        create: (data: { name: string; description?: string; directory?: string }) => Promise<Project>
+        create: (data: { name: string; description?: string }) => Promise<Project>
         update: (data: { id: string; name?: string; description?: string; directory?: string }) => Promise<Project>
         delete: (id: string) => Promise<boolean>
         switch: (id: string) => Promise<Project | null>

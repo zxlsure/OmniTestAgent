@@ -6,9 +6,9 @@ export interface Project {
 }
 
 export class ProjectRepo {
-  create(name: string, description?: string, directory?: string): Project {
+  create(name: string, description?: string): Project {
     const id = randomUUID(); const now = new Date().toISOString()
-    db().run('INSERT INTO project (id, name, description, directory, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)', [id, name, description || null, directory || null, now, now])
+    db().run('INSERT INTO project (id, name, description, directory, created_at, updated_at) VALUES (?, ?, ?, NULL, ?, ?)', [id, name, description || null, now, now])
     const result = this.getById(id)
     if (!result) throw new Error(`Project not found after insert: ${id}`)
     return result

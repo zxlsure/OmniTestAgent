@@ -7,11 +7,11 @@ export function registerProjectHandler(): void {
     if (!data || typeof data !== 'object') {
       throw new Error('项目创建失败：参数错误')
     }
-    const { name, description, directory } = data as { name: string; description?: string; directory?: string }
+    const { name, description } = data as { name: string; description?: string }
     if (!name || typeof name !== 'string') {
       throw new Error('项目创建失败：项目名称不能为空')
     }
-    return projectService.create(name, description, directory)
+    return projectService.create(name, description)
   })
   registerIpcHandler('project:update', (data: unknown) => {
     if (!data || typeof data !== 'object') {
